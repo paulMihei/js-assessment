@@ -15,15 +15,9 @@ exports.arraysAnswers = {
   },
 
   removeWithoutCopy: function (arr, item) {
-    function RemoveElementByIndex() {
-      let i = arr.indexOf(item);
-      if (i != -1) {
-        arr.splice(i, 1);
-        RemoveElementByIndex();
-      }
-    };
-    
-    RemoveElementByIndex();
+
+    while (arr.indexOf(item) != -1)
+      arr.splice(arr.indexOf(item), 1);
 
     return arr;
   },
